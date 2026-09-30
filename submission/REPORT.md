@@ -6,7 +6,7 @@
 - **MSSV:** 2A202602503
 - **Lớp:** K4-L3B
 - **Repository URL:** https://github.com/khanhken159/K4-L3B-Day13-NgoTheKhanh-2A202602503-Monitoring-LLMOps
-- **Commit SHA cuối:** Chưa có. `61a34f827748393ced851ea7c9b412dd53dced23` là `HEAD` hiện tại, nhưng working tree còn 33 thay đổi chưa commit nên không được dùng làm SHA nộp cuối.
+- **Commit gần nhất đã tạo:** `47fd8873968dd4c30259362790ad2b9544634b8b` (local, chưa push tại thời điểm cập nhật report). Sau khi commit bản report cuối, lấy SHA nộp bằng `git rev-parse HEAD`.
 - **Challenge ID:** `day13-k4-l3b-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3b-2A202602503`
 
@@ -93,11 +93,11 @@ Các đường dẫn evidence bên dưới là đường dẫn tương đối t�
 - **Chi tiết đọc được từ evidence Langfuse mục 08:** ảnh metadata hiển thị `correlation_id=req-6a2b8c41`, prompt `day13-chat`, version 1, label `production` và model `claude-sonnet-4-5`. Ảnh usage khác hiển thị trace `b6d0c159a6af87cf7770d2a427ee1dcb`, 148 tokens và cost `$0.001884`. Đây là hai trace riêng; report không gán token/cost của trace thứ hai cho request `req-6a2b8c41`.
 - Prompt version cho phép rollback cấu hình đã thử; token/cost giúp theo dõi mức sử dụng; SLO đặt ngưỡng dịch vụ và error budget định lượng mức lỗi cho phép.
 - **Điều học được:** cần nối metric, log và trace bằng cùng một request ID trước khi kết luận nguyên nhân.
-- **Phần còn thiếu trước khi nộp:** xác nhận việc tắt incident; tra hai trace ID prompt v1/v2; commit các thay đổi rồi cập nhật SHA cuối. Ảnh metadata mục 08 được giữ lại với các giá trị đọc được, nhưng chưa đủ trường trên cùng trace; học viên chọn không chụp lại mục này dù checklist yêu cầu.
+- **Phần còn thiếu trước khi nộp:** xác nhận việc tắt incident; tra hai trace ID prompt v1/v2; commit bản report cập nhật, push các commit và nộp SHA cuối trên LMS. Ảnh metadata mục 08 được giữ lại với các giá trị đọc được, nhưng chưa đủ trường trên cùng trace; học viên chọn không chụp lại mục này dù checklist yêu cầu.
 
 ## 9. Checklist trước khi nộp
 
-- [ ] Kết quả và evidence thuộc commit SHA cuối; chưa có commit cuối.
+- [ ] Push commit chứa bản report cuối; code và evidence hiện đã có trong commit local `47fd887`.
 - [x] Evidence 02 là ảnh validator cuối: 102 records và 100/100.
 - [x] Incident evidence nối metric → log → trace bằng `req-593e2d95`.
 - [ ] Evidence metadata mục 08: các trường đọc được đã ghi tại mục 8, nhưng hai ảnh là hai trace khác nhau nên chưa đáp ứng yêu cầu cùng một trace; học viên chọn không chụp lại.
