@@ -11,6 +11,13 @@ PII_DETECTORS = {
     "phone_vn": re.compile(r"(?<!\d)(?:\+84|0)(?:[ .-]?\d){9}(?!\d)"),
     "cccd": re.compile(r"\b\d{12}\b"),
     "credit_card": re.compile(r"\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b"),
+    "passport": re.compile(
+        r"(?i)\b(?:passport|hộ\s*chiếu|so\s*ho\s*chieu)\s*"
+        r"(?:number|no\.?|số)?\s*[:#-]?\s*[A-Z]\d{7}\b"
+    ),
+    "address": re.compile(
+        r"(?i)\b(?:địa\s*chỉ|dia\s*chi|address)\s*[:：]?\s*[^;\n]+"
+    ),
 }
 
 def main() -> None:
